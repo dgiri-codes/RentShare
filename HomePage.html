@@ -10,7 +10,7 @@
   <div class="board">
     <div class="boardHeader">
       <span class="boardTitle">The RentShare Board</span>
-    
+
     <div class="headerRight">
       <span class="newToday">Notices</span>
       <button class="iconBtn" aria-label="Account">
@@ -18,7 +18,7 @@
       </button>
       </div>
     </div>
-  
+
     <div class="notices" id="noticeGrid"></div>
       <div class="privacyNote"><i class="ti ti-flame"></i>
       <span>Notices are posted anonymously. Identities are only shared once someone offers to help.
@@ -32,12 +32,17 @@
 <div id="TNeed" class="modal-overlay">
   <div class="modal-content">
     <h2>📦 Post a Need</h2>
-    
+
+    <div class="form-group">
+      <label>YOUR COLLEGE EMAIL</label>
+      <input type="email" placeholder="025a101@sxc.edu.np">
+    </div>
+
     <div class="form-group">
       <label>WHAT DO YOU NEED?</label>
       <input type="text" id="itemName" placeholder="e.g. Scientific calculator">
     </div>
-    
+
     <div class="form-group">
       <label>YOUR GRADE</label>
       <select id="itemGrade">
@@ -45,12 +50,12 @@
         <option value="Grade 12">Grade 12</option>
       </select>
     </div>
-    
+
     <div class="form-group">
       <label>WHEN / WHY DO YOU NEED IT?</label>
       <input type="text" id="itemContext" placeholder="e.g. for tomorrow's exam">
     </div>
-    
+
     <div class="form-row">
       <div class="form-group half">
         <label>FROM</label>
@@ -61,12 +66,12 @@
         <input type="number" id="itemDays" placeholder="e.g. 3" min="1">
       </div>
     </div>
-    
+
     <div class="form-group">
       <label>PRICE OFFERING (Rs. per day)</label>
       <input type="number" id="itemPrice" placeholder="e.g. 50" min="0">
     </div>
-    
+
     <div class="modal-actions">
       <button class="btn-cancel" id="cancelBtn">Cancel</button>
       <button class="btn-submit" id="pinBtn">Pin it ✅</button>
@@ -77,37 +82,46 @@
 <div id="offerModal" class="modal-overlay">
   <div class="modal-content" id="offerContent">
     <div id="offerStep1">
+
       <h2 id="offerTitle">Item Name</h2>
+
       <p id="offerMeta" class="modal-subtitle">Grade · Context</p>
+
       <div class="detail-row">
         <span>📅 From:</span>
         <span id="offerFrom">-</span>
       </div>
+
       <div class="detail-row">
         <span>📆 Days:</span>
         <span id="offerDays">-</span>
       </div>
+
       <div class="detail-row">
         <span>💰 Price:</span>
         <span id="offerPrice">-</span>
       </div>
+
       <button class="btn-submit btn-full mt-16" onclick="showOfferForm()">
         offer it →
       </button>
+
       <button class="btn-cancel btn-full mt-8" onclick="closeOfferModal()">
         Cancel
       </button>
+
     </div>
 
     <div id="offerStep2" class="hidden">
       <h2>🤝 Offer to Help</h2>
+
       <p class="modal-subtitle">Fill in your details to see the borrower's contact.</p>
-      
+
       <div class="form-group">
         <label>YOUR NAME</label>
         <input type="text" id="offerName" placeholder="e.g. Diva">
       </div>
-      
+
       <div class="form-group">
         <label>YOUR GRADE</label>
         <select id="offerGrade">
@@ -115,15 +129,16 @@
           <option value="Grade 12">Grade 12</option>
         </select>
       </div>
-      
+
       <div class="form-group">
         <label>WHEN CAN YOU GIVE IT?</label>
         <input type="text" id="offerDate" placeholder="e.g. Tomorrow, 12 PM">
       </div>
-      
+
       <button class="btn-submit btn-full" onclick="submitOffer()">
         Submit → See Contact
       </button>
+
       <button class="btn-cancel btn-full mt-8" onclick="closeOfferModal()">
         Cancel
       </button>
@@ -131,21 +146,28 @@
 
     <div id="offerStep3" class="hidden">
       <h2>✅ Contact Revealed</h2>
+
       <p>The borrower's email is:</p>
+
       <p class="contact-email" id="borrowerEmail">borrower@school.edu</p>
+
       <p class="contact-note">
         Reach out to them directly to coordinate.
       </p>
+
       <button class="btn-submit btn-full mt-16" onclick="confirmBooking()">
         Sure? ✅
       </button>
+
       <button class="btn-cancel btn-full mt-8" onclick="closeOfferModal()">
         Cancel
       </button>
     </div>
+
   </div>
 </div>
-  </div>
-  <script src="SHomePage.js" defer></script>
+
+<script type="module" src="SHomePage.js"></script>
+
 </body>
 </html>
